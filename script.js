@@ -9,12 +9,8 @@ fs.readFile('./riddle.txt', (err, data) => {
 	}
 	riddle.push(data.toString().split(""));
 const answer = riddle[0].map((output) => {
-	if(output === '(') {
-		answerTotal.push(1)		
-	}else{
-		answerTotal.push(-1)	
-	}
-});
+	(output === '(')?	answerTotal.push(1): answerTotal.push(-1)	
+	});
 console.log('answerTotal', answerTotal.reduce((a, b) => a + b, 0));
 console.timeEnd('timer')
 })
